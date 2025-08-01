@@ -14,7 +14,7 @@ public class MinimumFountain {
 	public static void main(String[] args) {
 		
 		MinimumFountain obj = new MinimumFountain();
-		List<Integer> locations = Arrays.asList(1, 2, 0, 0,0);
+		List<Integer> locations = Arrays.asList(1, 2, 1, 0,0);
 		System.out.println(obj.fountainActivation(locations));
 	}
 	

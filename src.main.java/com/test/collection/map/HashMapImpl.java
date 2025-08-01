@@ -1,6 +1,12 @@
 package com.test.collection.map;
 import java.util.Objects;
 
+/**
+ * 
+ * 1. For LikedList --> Create Node with key, value and next Node reference
+ * 2. For Bucket --> Array Node
+ * 3. Initialize HashMap. Take size and initialize Bucket with provided size
+ */
 public class HashMapImpl {
 
 	public static void main(String[] args) {
@@ -12,14 +18,14 @@ public class HashMapImpl {
 		map.put("3", "3");
 		System.out.println(map.get("3"));
 		map.put("3", "4");
-
+		System.out.println(map.get("3"));
 		System.out.println(map.get("Ea"));
 		System.out.println(map.get("FB"));
 		System.out.println(map.get("8"));
 
 	}
 
-	public int hasCode(Object key) {
+	public int hashCode(Object key) {
 		return Objects.hashCode(key);
 	}
 
@@ -32,7 +38,7 @@ public class HashMapImpl {
 
 	public void put(Object key, Object value) {
 
-		int hasCode = hasCode(key);
+		int hasCode = hashCode(key);
 		int idx = hasCode%n;
 		if(buckets[idx] == null) {
 			buckets[idx] = new Node(key, value);
@@ -43,7 +49,7 @@ public class HashMapImpl {
 
 	public Object get(Object key) {
 
-		int hasCode = hasCode(key);
+		int hasCode = hashCode(key);
 		int idx = hasCode%n;
 		Node node = buckets[idx];
 		if(node == null)
@@ -52,6 +58,19 @@ public class HashMapImpl {
 			return node.get(key);
 		}
 	}
+	
+	/** Removes the mapping of the specified value key if this map contains a mapping for the key */
+    public void remove(Object key) {
+        int idx = hashCode(key);
+        if(buckets[idx] != null){
+            if(buckets[idx].key == key){
+            	buckets[idx] = buckets[idx].next;
+            }else{
+            	buckets[idx].remove(key);    
+            }
+        }
+    }
+    
 }
 
 class Node{
@@ -96,4 +115,18 @@ class Node{
 		}
 		return null;
 	}
+	
+	public void remove(Object key){
+        Node curr = this;
+        Node prev = null;
+        while(curr.next != null){
+            if(curr.key == key){
+                prev.next = curr.next;
+                return;
+            }else{
+                prev = curr;
+                curr = curr.next;
+            }
+        }
+    }
 }

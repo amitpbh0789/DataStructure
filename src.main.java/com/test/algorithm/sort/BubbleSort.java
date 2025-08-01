@@ -46,12 +46,12 @@ public class BubbleSort {
 	 */
 	private void bubbleSort(int arr[]) {
 		
-		int length = arr.length;
-		for(int i=0; i<length-1; i++) {
-			for(int j=0; j<length-i-1; j++) { // length-i-1 -> coz In each iteration max element 
+		int length = arr.length-1;
+		for(int i=0; i<length; i++) {
+			for(int j=0; j<length-i; j++) { // length-i-1 -> coz In each iteration max element 
 //				would be at right most side. We dont have look at last element at each iteration.
 				
-				if(arr[j+1]<arr[j]) {
+				if(arr[j]>arr[j+1]) {
 					int temp = arr[j];
 					arr[j] = arr[j+1];
 					arr[j+1] = temp;
@@ -68,19 +68,19 @@ public class BubbleSort {
 	 */
 	private void optimizedBubbleSort(int arr[]) {
 		
-		boolean flag;
+		boolean isSorted;
 		for(int i=0; i<arr.length-1; i++) {
-			flag = false;
-			for(int j=0; j<arr.length-i-1; j++) {
+			isSorted = false;
+			for(int j=0; j<arr.length-1-i; j++) {
 				
 				if(arr[j+1]<arr[j]) {
 					int temp = arr[j];
 					arr[j] = arr[j+1];
 					arr[j+1] = temp;
-					flag = true;
+					isSorted = true;
 				}
 			}
-			if(!flag)
+			if(!isSorted)
 				break;
 		}
 	}

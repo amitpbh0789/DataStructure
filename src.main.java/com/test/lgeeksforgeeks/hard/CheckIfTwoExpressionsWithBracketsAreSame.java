@@ -2,6 +2,15 @@ package com.test.lgeeksforgeeks.hard;
 
 import java.util.Stack;
 
+/**
+ * https://www.geeksforgeeks.org/check-two-expressions-brackets/
+ * 
+ * Given two expressions in the form of strings. The task is to compare them and check if they are similar. 
+ * Expressions consist of lowercase alphabets, ‘+’, ‘-‘ and ‘( )’.
+ * 
+ * Approach: For example, the expression a+b-(c-d) is evaluated as (+)+a(+)+b(-)+c(-)-d => a + b – c + d. 
+ * The global sign (represented inside bracket) is multiplied to the local sign for each operand.
+ */
 public class CheckIfTwoExpressionsWithBracketsAreSame {
 
 	static final int MAX_CHAR = 26;

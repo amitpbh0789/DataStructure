@@ -2,6 +2,9 @@ package com.test.hackerrank.easy;
 
 import java.util.Arrays;
 
+/**
+ * https://www.hackerrank.com/challenges/sherlock-and-valid-string/
+ */
 public class SherlockAndTheValidString {
 
 	public static void main(String[] args) {

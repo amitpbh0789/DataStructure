@@ -33,8 +33,8 @@ public class LongestSubstringWithAtMostKDistinctCharacters {
 
 	public static void main(String[] args) {
 		LongestSubstringWithAtMostKDistinctCharacters obj = new LongestSubstringWithAtMostKDistinctCharacters();
-		String s = "eceeeba";
-		int k = 3;
+		String s = "eceba";
+		int k = 2;
 		System.out.println(obj.lengthOfLongestSubstringKDistinct(s, k));
 	}
 	

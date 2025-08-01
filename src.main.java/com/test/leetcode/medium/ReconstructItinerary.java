@@ -28,8 +28,9 @@ public class ReconstructItinerary {
 		Stack<String> stack = new Stack<>();
 		stack.push("SFO");
 		while(!stack.empty()) {
-			while(dests.containsKey(stack.peek()) && !dests.get(stack.peek()).isEmpty())
+			while(dests.containsKey(stack.peek()) && !dests.get(stack.peek()).isEmpty()) {
 				stack.push(dests.get(stack.peek()).poll());
+			}
 			res.add(0, stack.pop());
 		}
 		return res;

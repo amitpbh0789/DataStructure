@@ -3,6 +3,10 @@ package com.test.hackerrank.easy;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * 
+ * https://www.hackerrank.com/challenges/special-palindrome-again/problem
+ */
 public class SpecialStringAgain {
 
 	static int count;

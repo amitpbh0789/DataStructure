@@ -4,6 +4,8 @@ package com.test.algorithm.sort;
  * https://www.geeksforgeeks.org/quick-sort/
  *	Worst Case:  O(n2)
  *	Average: NlogN
+ *
+ * Works on Divide and Conquer
  */
 public class QuickSort {
 	

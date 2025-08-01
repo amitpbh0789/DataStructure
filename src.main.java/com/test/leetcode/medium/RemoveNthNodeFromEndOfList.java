@@ -1,6 +1,6 @@
 package com.test.leetcode.medium;
 
-import com.test.linkedlist.LinkedList;
+import com.test.collection.linkedlist.LinkedList;
 
 public class RemoveNthNodeFromEndOfList {
 
